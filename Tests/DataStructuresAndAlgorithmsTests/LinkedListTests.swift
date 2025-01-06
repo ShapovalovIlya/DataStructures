@@ -44,7 +44,17 @@ struct LinkedListTests {
         
         let node = sut.nodeAt(index: index)
         
+        #expect(node?.value == index)
+    }
+    
+    @Test func removeAll() async throws {
+        let sut = Self.makeSut()
         
+        sut.removeAll()
+        
+        #expect(sut.first == nil)
+        #expect(sut.last == nil)
+        #expect(sut.count == 0)
     }
     
 }

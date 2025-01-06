@@ -56,6 +56,11 @@ public class LinkedList<T> {
         }
         return nil
     }
+    
+    public func removeAll() {
+        head = nil
+        tail = nil
+    }
 }
 
 //MARK: - CustomStringConvertible
