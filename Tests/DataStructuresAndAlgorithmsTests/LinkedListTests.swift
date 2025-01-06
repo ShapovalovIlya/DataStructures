@@ -57,4 +57,15 @@ struct LinkedListTests {
         #expect(sut.count == 0)
     }
     
+    @Test func removeNode() async throws {
+        let sut = Self.makeSut()
+        let nodeToRemove = try #require(sut.nodeAt(index: 1))
+        
+        let removed = sut.remove(node: nodeToRemove)
+        
+        #expect(removed == 1)
+        #expect(nodeToRemove.next == nil)
+        #expect(nodeToRemove.previous == nil)
+        #expect(sut.description == "[0, 2]")
+    }
 }

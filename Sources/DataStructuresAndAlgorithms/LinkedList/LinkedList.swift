@@ -57,6 +57,27 @@ public class LinkedList<T> {
         return nil
     }
     
+    public func remove(node: Node<T>) -> T? {
+        let prev = node.previous
+        let next = node.next
+        
+        if let prev {
+            prev.next = next
+        }
+        else {
+            head = next
+        }
+        next?.previous = prev
+        
+        if next == nil {
+            tail = prev
+        }
+        
+        node.next = nil
+        node.previous = nil
+        return node.value
+    }
+    
     public func removeAll() {
         head = nil
         tail = nil

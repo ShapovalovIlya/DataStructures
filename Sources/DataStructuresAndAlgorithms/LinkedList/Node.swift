@@ -12,7 +12,7 @@ public class Node<T> {
     public var next: Node<T>?
     public weak var previous: Node<T>?
     
-    init(_ value: T) { self.value = value }
+    public init(_ value: T) { self.value = value }
 }
 
 extension Node: CustomStringConvertible {
