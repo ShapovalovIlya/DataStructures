@@ -68,4 +68,15 @@ struct LinkedListTests {
         #expect(nodeToRemove.previous == nil)
         #expect(sut.description == "[0, 2]")
     }
+    
+    @Test func makeIterator() async throws {
+        let sut = Self.makeSut()
+        var counter = 0
+        
+        for _ in sut {
+            counter += 1
+        }
+        
+        #expect(sut.count == counter)
+    }
 }

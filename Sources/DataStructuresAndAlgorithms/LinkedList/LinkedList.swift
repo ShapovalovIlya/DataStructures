@@ -98,3 +98,24 @@ extension LinkedList: CustomStringConvertible {
         return text.appending("]")
     }
 }
+
+extension LinkedList: Sequence {
+    public struct Iterator: IteratorProtocol {
+        public typealias Element = Node<T>
+        
+        var node: Element?
+        
+        public mutating func next() -> Element? {
+            guard let current = node else {
+                return nil
+            }
+            self.node = current.next
+            return current
+        }
+        
+    }
+    
+    public func makeIterator() -> Iterator {
+        Iterator(node: head)
+    }
+}
