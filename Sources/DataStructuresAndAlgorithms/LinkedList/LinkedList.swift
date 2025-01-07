@@ -82,6 +82,10 @@ public class LinkedList<T> {
         head = nil
         tail = nil
     }
+    
+    public subscript(_ index: Int) -> T? {
+        nodeAt(index: index)?.value
+    }
 }
 
 //MARK: - CustomStringConvertible

@@ -79,4 +79,12 @@ struct LinkedListTests {
         
         #expect(sut.count == counter)
     }
+    
+    @Test func subscriptingValue() async throws {
+        let sut = Self.makeSut()
+        
+        let val = sut[1]
+        
+        #expect(val == sut.nodeAt(index: 1)?.value)
+    }
 }
