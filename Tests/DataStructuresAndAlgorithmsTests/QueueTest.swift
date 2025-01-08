@@ -47,4 +47,15 @@ struct QueueTest {
         
         #expect(first == 0)
     }
+    
+    @Test func queueAsSequence() async throws {
+        let sut = Self.makeSut()
+        var counter = 0
+        
+        for _ in sut {
+            counter += 1
+        }
+        
+        #expect(sut.count == counter)
+    }
 }

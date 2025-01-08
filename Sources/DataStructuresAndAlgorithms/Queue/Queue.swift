@@ -42,6 +42,21 @@ public struct Queue<T> {
     }
 }
 
+extension Queue: Sequence {
+    public struct Iterator: IteratorProtocol {
+        public typealias Element = T
+        var base: LinkedList<T>.Iterator
+        
+        public mutating func next() -> T? {
+            base.next()?.value
+        }
+    }
+    
+    public func makeIterator() -> Iterator {
+        Iterator(base: list.makeIterator())
+    }
+}
+
 extension Queue: CustomStringConvertible {
     public var description: String { list.description }
 }
