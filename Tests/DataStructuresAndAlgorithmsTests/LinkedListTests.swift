@@ -9,8 +9,10 @@ import Testing
 import DataStructuresAndAlgorithms
 
 struct LinkedListTests {
-    static func makeSut(_ nodes: Int = 3) -> LinkedList<Int> {
-        let sut = LinkedList<Int>()
+    typealias Sut = LinkedList<Int>
+    
+    static func makeSut(_ nodes: Int = 3) -> Sut {
+        var sut = LinkedList<Int>()
         for i in 0..<nodes {
             sut.append(i)
         }
@@ -38,6 +40,12 @@ struct LinkedListTests {
         #expect(sut.count == 5)
     }
     
+    @Test func initWithSequence() async throws {
+        let sut = Sut(elements: 1, 2, 3)
+        
+        #expect(sut.count == 3)
+    }
+    
     @Test(arguments: [0,1,2])
     func nodeAt(index: Int) async throws {
         let sut = Self.makeSut()
@@ -48,7 +56,7 @@ struct LinkedListTests {
     }
     
     @Test func removeAll() async throws {
-        let sut = Self.makeSut()
+        var sut = Self.makeSut()
         
         sut.removeAll()
         
@@ -58,7 +66,7 @@ struct LinkedListTests {
     }
     
     @Test func removeNode() async throws {
-        let sut = Self.makeSut()
+        var sut = Self.makeSut()
         let nodeToRemove = try #require(sut.nodeAt(index: 1))
         
         let removed = sut.remove(node: nodeToRemove)

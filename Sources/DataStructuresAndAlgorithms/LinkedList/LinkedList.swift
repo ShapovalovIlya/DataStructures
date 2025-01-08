@@ -7,18 +7,34 @@
 
 import Foundation
 
-public class LinkedList<T> {
+public struct LinkedList<T> {
     fileprivate var head: Node<T>?
     private var tail: Node<T>?
     
+    //MARK: - init(_:)
+    public init() {}
+    
     public init(
-        head: Node<T>? = nil,
+        head: Node<T>,
         tail: Node<T>? = nil
     ) {
         self.head = head
         self.tail = tail
     }
     
+    public init(sequence: some Sequence<T>) {
+        sequence.forEach { append($0) }
+    }
+    
+    public init(elements: T...) {
+        self.init(elements)
+    }
+    
+    public init(_ array: [T]) {
+        self.init(sequence: array)
+    }
+    
+    //MARK: - Public properties
     public var isEmpty: Bool { head == nil }
     public var first: Node<T>? { head }
     public var last: Node<T>? { tail }
@@ -33,7 +49,7 @@ public class LinkedList<T> {
         return i
     }
     
-    public func append(_ value: T) {
+    public mutating func append(_ value: T) {
         let newNode = Node(value)
         if let tail {
             newNode.previous = tail
@@ -57,7 +73,8 @@ public class LinkedList<T> {
         return nil
     }
     
-    public func remove(node: Node<T>) -> T? {
+    @discardableResult
+    public mutating func remove(node: Node<T>) -> T? {
         let prev = node.previous
         let next = node.next
         
@@ -78,7 +95,7 @@ public class LinkedList<T> {
         return node.value
     }
     
-    public func removeAll() {
+    public mutating func removeAll() {
         head = nil
         tail = nil
     }
