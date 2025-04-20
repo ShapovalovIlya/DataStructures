@@ -4,8 +4,8 @@
 - [Swift Algorithm Club: Swift Linked List Data Structure](https://www.raywenderlich.com/144083/swift-algorithm-club-swift-linked-list-data-structure) V
 - [Swift Algorithm Club: Swift Stack Data Structure](https://www.raywenderlich.com/149213/swift-algorithm-club-swift-stack-data-structure) V
 - [Swift Algorithm Club: Swift Queue Data Structure](https://www.raywenderlich.com/148141/swift-algorithm-club-swift-queue-data-structure) V
-- [Swift Algorithm Club: Swift Trie Data Structure](https://www.raywenderlich.com/139410/swift-algorithm-club-swift-trie-data-structure)
-- [Swift Algorithm Club: Swift Binary Search Tree Data Structure](https://www.raywenderlich.com/139821/swift-algorithm-club-swift-binary-search-tree-data-structure)
+- [Swift Algorithm Club: Swift Trie Data Structure](https://www.raywenderlich.com/139410/swift-algorithm-club-swift-trie-data-structure) V
+- [Swift Algorithm Club: Swift Binary Search Tree Data Structure](https://www.raywenderlich.com/139821/swift-algorithm-club-swift-binary-search-tree-data-structure) V
 - [Swift Algorithm Club: Heap and Priority Queue Data Structure](https://www.raywenderlich.com/160631/swift-algorithm-club-heap-and-priority-queue-data-structure)
 - [Implementing a Heap Based Priority Queue Using Swift](https://www.appcoda.com/swift-algorithm/)
 - [Swift Algorithm Club: Graphs with Adjacency List](https://www.raywenderlich.com/152046/swift-algorithm-club-graphs-adjacency-list)
